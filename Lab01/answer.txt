@@ -1,0 +1,5 @@
+Exercise 4.1: DeclareVariables.java
+Giá trị được in ra của roundedCost là 19
+Khi ép kiểu từ double sang int thì nó đã bị cắt phần thập phân
+Giải thích:Vì khi ép kiểu từ double (chứa phần nguyên và phần thập phân) sang int thì nó chỉ lưu lại phần nguyên và bỏ đi phần thập phân chứ không làm tròn.
+Nếu muốn làm tròn phải dùng hàm làm tròn số
