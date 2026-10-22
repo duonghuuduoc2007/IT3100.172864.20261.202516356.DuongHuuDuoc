@@ -1,0 +1,16 @@
+*Trả lời câu hỏi phần 5:
+	Java không cho phép khởi tạo DigitalVideoDisc(String title) và DigitalVideoDisc(String category) cùng một lúc.
+	Vì việc nạp chồng phương thức được xác định dựa trên chữ ký phương thức, gồm tên phương thức, thứ tự và kiểu tham số chứ không quan tâm đến tên của tham số.
+	Cả title và category đều là biến kiểu String nên Java không thể phân biệt được hai phương thức này, tức là trùng lặp phương thức vì có cùng một chữ ký.
+*Trả lời câu hỏi phần 9.1:
+	Giữa phiên bảng sử dụng mảng và phiên bản sử dụng varargs em thích dùng phiên bản varargs hơn.
+	Vì phiên bản varargs khi dùng có thể truyền trực tiếp các đối tượng ngăn cách nhau bởi dấu phẩy vào hàm thay vì phải tạo mảng rồi truyền vào.
+*Trả lời câu hỏi phần 10:
+	+)Trong Java tất cả mọi đối số đều được truyền dưới dạng tham trị. Với kiểu dữ liệu nguyên thủy sẽ truyền bản sao của giá trị thực sự.
+		Với kiểu dữ liệu tham chiếu (mảng, đối tượng) sẽ truyền giá trị hoặc bản sao của tham chiếu ban đầu.
+		Việc thay đổi các tham số hình thức bên trong phương thức không làm thay đổi các biến/đối số thực sự bên ngoài.
+	+)Sau khi gọi swap(jungleDVD, cinderellaDVD) tiêu đề của hai đối tượng này vẫn giữ nguyên vì Java luôn truyền tham số theo kiểu tham trị. 
+		Chỉ bản sao của hai đối tượng này lưu ở hai biến cục bộ được hoán đổi chứ không tác động đến các tham chiếu gốc ngoài hàm.
+	+)Sau khi gọi changeTitle(jungleDVD, cinderellaDVD.getTitle()) thì tiêu đề của jungleDVD bị thay đổi thành cinderellaDVD.
+		Vì bản sao tham chiếu của jungleDVD được chép vào biến cục bộ dvd. Lúc này cả dvd và JungleDVD bên ngoài hàm cùng trỏ đến một đối tượng.
+		Lệnh dvd.setTitle(title) đã làm thay đổi trực tiếp thuộc tính của đối tượng được tham chiếu đến. Do đó đối tượng JungleDVD bên ngoài hàm cũng bị thay đổi
